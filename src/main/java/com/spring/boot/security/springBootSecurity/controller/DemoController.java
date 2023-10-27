@@ -20,4 +20,15 @@ public class DemoController {
     public String balance(){
         return "balance";
     }
+
+    @GetMapping("/card")
+    public String card(){
+        return "Card details";
+    }
+
+    @GetMapping("/accounts")
+    public String accounts(){
+        return "All accounts info";
+    }
+
 }
