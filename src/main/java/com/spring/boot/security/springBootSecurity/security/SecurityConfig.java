@@ -11,8 +11,10 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests((request)->{
+            request.requestMatchers("/balance").authenticated();
             request.anyRequest().permitAll();
         });
+        http.formLogin(request -> request.permitAll());
         return http.build();
     }
 }
